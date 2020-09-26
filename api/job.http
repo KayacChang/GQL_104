@@ -1,0 +1,4 @@
+# Job search api 
+GET /jobs/search/list?ro=0&isnew=3&kwop=7&keyword=%E5%89%8D%E7%AB%AF&expansionType=area%2Cspec%2Ccom%2Cjob%2Cwf%2Cwktm&area=6001001000%2C6001002000&order=12&asc=0&page=2&mode=s&jobsource=2018indexpoc HTTP/1.1
+Host: www.104.com.tw
+Referer: https://www.104.com.tw/jobs/search/?ro=0&isnew=3&keyword=%E5%89%8D%E7%AB%AF&expansionType=area%2Cspec%2Ccom%2Cjob%2Cwf%2Cwktm&area=6001001000%2C6001002000&jobsource=2018indexpoc
