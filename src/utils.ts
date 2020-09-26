@@ -7,13 +7,10 @@ type Props = {
   search?: { [key: string]: any };
 };
 
-export function toURL({
+export const toURL = ({
   protocol = "https",
   hostname,
   pathname = "/",
   search = {},
-}: Props) {
-  return (
-    protocol + "://" + [hostname, pathname].join("/") + "?" + stringify(search)
-  );
-}
+}: Props) =>
+  protocol + "://" + [hostname, pathname].join("/") + "?" + stringify(search);

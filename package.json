@@ -5,12 +5,16 @@
   "author": "kayac",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^26.0.14",
     "@types/node-fetch": "^2.5.7",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.4.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
   },
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "test": "jest"
   },
   "dependencies": {
     "graphql-tools": "^6.2.3",

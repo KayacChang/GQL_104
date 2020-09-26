@@ -1,6 +1,7 @@
 import fetch from "node-fetch";
-import { HOST, JOB, SEARCH, LIST } from "./constants";
-import { toURL } from "./utils";
+import { HOST, JOB, SEARCH, LIST } from "../constants";
+import { toURL } from "../utils";
+import Job from "./model";
 
 const qs = {
   ro: "0",
@@ -31,7 +32,7 @@ const URL = toURL({
   search: qs1,
 });
 
-export default function search() {
+export default function search(): Promise<Job[]> {
   return fetch(URL, {
     headers: {
       Referer,
