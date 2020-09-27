@@ -8,4 +8,14 @@ enum Area {
   NewTaipeiCity = 6001002000,
 }
 
-export { HOST, JOB, SEARCH, LIST, Area };
+enum Category {
+  All = 0,
+  FullTime = 1,
+  PartTime = 2,
+  Executive = 3,
+  TempWorker = 4,
+  CaseJob = 5,
+  Tutor = 6,
+}
+
+export { HOST, JOB, SEARCH, LIST, Area, Category };

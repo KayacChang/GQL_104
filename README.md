@@ -19,7 +19,6 @@ GET https://{host}/jobs/search/list
     &mode={}
     &jobsource={} 
     HTTP/1.1
-Host: {host}
 Referer: https://{host}/jobs/search/
          ?ro={}
          &isnew={}
@@ -36,7 +35,7 @@ the target href will referer to that reference
 and get data by filters such as order, asc, page ...etc
 
 #### QueryString: 
- - ro: unknown yet
+ - ro: filter by major category, 
  - isnew: the latest data limit by number
  - kwop: unknown yet
  - keyword: search keyword
@@ -47,6 +46,15 @@ and get data by filters such as order, asc, page ...etc
  - page: data split by page index
  - mode: unknown yet
  - jobsource: unknown yet
+
+#### Major Category
+0. all
+1. full time
+2. part time
+3. executive
+4. temp worker
+5. case job
+6. tutor
 
 #### Area:
 - TaipeiCity: 6001001000

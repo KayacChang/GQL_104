@@ -1,8 +1,30 @@
 import search from "./search";
+import { pipe, nthArg } from "ramda";
 
 const SDL = `#graphql
     type Query {
-        jobs: [Job!]!
+        jobs(
+          keyword: String!, 
+          category: Category, 
+          latest: Int, 
+          page: Int,
+          area: [Area!]
+        ): [Job!]!
+    }
+
+    enum Area {
+      TaipeiCity,
+      NewTaipeiCity,
+    }
+
+    enum Category {
+      All,
+      FullTime,
+      PartTime,
+      Executive,
+      TempWorker,
+      CaseJob,
+      Tutor,
     }
 
     type Job {
@@ -51,7 +73,7 @@ const SDL = `#graphql
 
 const Resolver = {
   Query: {
-    jobs: () => search(),
+    jobs: pipe(nthArg(1), search),
   },
 };
 
