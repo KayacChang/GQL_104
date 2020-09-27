@@ -16,7 +16,8 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "test": "jest",
-    "heroku-prebuild": "tsc -p .",
+    "tsc": "tsc",
+    "heroku-prebuild": "npm run tsc -p .",
     "start": "node dist/index.js"
   },
   "dependencies": {
