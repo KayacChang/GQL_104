@@ -8,7 +8,7 @@ import {
   Category,
   Area,
 } from "../constants";
-import { toURL } from "../utils";
+import { keysOfEnum, toURL } from "../utils";
 import Job from "./model";
 
 const URL = (hostname: string) => (paths: string[]) => (search: any) =>
@@ -21,10 +21,8 @@ const URL = (hostname: string) => (paths: string[]) => (search: any) =>
 const API_LIST = URL(HOST)([JOB, SEARCH, LIST]);
 const API_REFERER = URL(HOST)([JOB, SEARCH]);
 
-const toArea = (key: number) => [Area.TaipeiCity, Area.NewTaipeiCity][key];
-
-const toOperation = (key: number) =>
-  [Operation.Default, Operation.OnlyJobName][key];
+const toArea = (key: number) => keysOfEnum(Area)[key];
+const toOperation = (key: number) => keysOfEnum(Operation)[key];
 
 type Props = {
   keyword: string;

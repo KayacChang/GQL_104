@@ -1,5 +1,7 @@
 import search from "./search";
 import { pipe, nthArg } from "ramda";
+import { Area, Category, Operation } from "../constants";
+import { keysOfEnum } from "../utils";
 
 const SDL = `#graphql
     type Query {
@@ -14,23 +16,15 @@ const SDL = `#graphql
     }
 
     enum Operation {
-      Default,
-      OnlyJobName,
+      ${keysOfEnum(Operation)}
     }
 
     enum Area {
-      TaipeiCity,
-      NewTaipeiCity,
+      ${keysOfEnum(Area)}
     }
 
     enum Category {
-      All,
-      FullTime,
-      PartTime,
-      Executive,
-      TempWorker,
-      CaseJob,
-      Tutor,
+      ${keysOfEnum(Category)}
     }
 
     type Job {
