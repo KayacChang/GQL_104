@@ -26,6 +26,31 @@ enum Operation {
 enum Area {
   TaipeiCity
   NewTaipeiCity
+  Yilan
+  Keelung
+  Taoyuan
+  Hsinchu
+  Miaoli
+  Taichung
+  Changhua
+  Nantou
+  Yunlin
+  Chiayi
+  Tainan
+  Kaohsiung
+  Pingtung
+  Taitung
+  Hualien
+  Penghu
+  Kinmen
+  Lienchiang
+  China
+  Asia
+  Oceania
+  NorthAmericas
+  SouthAmericas
+  Europe
+  Africa
 }
 
 enum Category {
@@ -131,18 +156,26 @@ and get data by filters such as order, asc, page ...etc
 
 #### Major Category
 
-- 0: all
-- 1: full time
-- 2: part time
-- 3: executive
-- 4: temp worker
-- 5: case job
-- 6: tutor
+```typescript
+enum Category {
+  All,
+  FullTime,
+  PartTime,
+  Executive,
+  TempWorker,
+  CaseJob,
+  Tutor,
+}
+```
 
 #### Keyword Operation
 
-- 1: only jobname
-- 7: default
+```typescript
+enum Operation {
+  Default = 7,
+  OnlyJobName = 0,
+}
+```
 
 #### Area:
 
