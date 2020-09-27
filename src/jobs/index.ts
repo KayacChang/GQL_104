@@ -8,8 +8,14 @@ const SDL = `#graphql
           category: Category, 
           latest: Int, 
           page: Int,
-          area: [Area!]
+          area: [Area!],
+          operation: Operation
         ): [Job!]!
+    }
+
+    enum Operation {
+      Default,
+      OnlyJobName,
     }
 
     enum Area {

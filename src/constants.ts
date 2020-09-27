@@ -3,6 +3,11 @@ const JOB = `jobs`;
 const SEARCH = `search`;
 const LIST = `list`;
 
+enum Operation {
+  OnlyJobName = 0,
+  Default = 7,
+}
+
 enum Area {
   TaipeiCity = 6001001000,
   NewTaipeiCity = 6001002000,
@@ -18,4 +23,4 @@ enum Category {
   Tutor = 6,
 }
 
-export { HOST, JOB, SEARCH, LIST, Area, Category };
+export { HOST, JOB, SEARCH, LIST, Operation, Area, Category };
