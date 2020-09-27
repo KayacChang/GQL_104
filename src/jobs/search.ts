@@ -3,12 +3,15 @@ import { HOST, JOB, SEARCH, LIST, Category, Area } from "../constants";
 import { toURL } from "../utils";
 import Job from "./model";
 
-const URL = (paths: string[]) => (qs: any) =>
+const URL = (hostname: string) => (paths: string[]) => (search: any) =>
   toURL({
-    hostname: HOST,
+    hostname,
     pathname: paths.join("/"),
-    search: qs,
+    search,
   });
+
+const API_LIST = URL(HOST)([JOB, SEARCH, LIST]);
+const API_REFERER = URL(HOST)([JOB, SEARCH]);
 
 const toArea = (idx: number) =>
   [
@@ -50,9 +53,9 @@ export default function search({
     mode: "s",
   };
 
-  return fetch(URL([JOB, SEARCH, LIST])(qs), {
+  return fetch(API_LIST(qs), {
     headers: {
-      Referer: URL([JOB, SEARCH])(qs1),
+      Referer: API_REFERER(qs1),
     },
   })
     .then((res) => res.json())
