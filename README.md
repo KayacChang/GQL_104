@@ -1,6 +1,8 @@
-# GQL Proxy for 104 job resource
+# GraphQL Proxy for 104 job resource
 
 Because the 104 open API not work, so I want to create one.
+
+[GraphQL Playground](https://intense-sands-63009.herokuapp.com/playground)
 
 ## GraphQL Schema
 
