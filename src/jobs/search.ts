@@ -21,21 +21,22 @@ const qs1 = {
   mode: "s",
 };
 
-const Referer = toURL({
-  hostname: HOST,
-  pathname: [JOB, SEARCH].join("/"),
-  search: qs,
-});
-const URL = toURL({
-  hostname: HOST,
-  pathname: [JOB, SEARCH, LIST].join("/"),
-  search: qs1,
-});
+const URL = (paths: string[]) => (qs: any) =>
+  toURL({
+    hostname: HOST,
+    pathname: paths.join("/"),
+    search: qs,
+  });
+
+type Props = {
+  expansionType: string;
+  area?: string;
+};
 
 export default function search(): Promise<Job[]> {
-  return fetch(URL, {
+  return fetch(URL([JOB, SEARCH, LIST])(qs), {
     headers: {
-      Referer,
+      Referer: URL([JOB, SEARCH])(qs1),
     },
   })
     .then((res) => res.json())
