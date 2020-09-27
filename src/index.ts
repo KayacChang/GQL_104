@@ -6,7 +6,7 @@ const typeDefs = mergeTypeDefs([jobs.SDL]);
 const resolvers = mergeResolvers([jobs.Resolver]);
 
 const options = {
-  port: 80,
+  port: process.env.PORT || 8000,
   endpoint: "/graphql",
   subscriptions: "/subscriptions",
   playground: "/playground",
